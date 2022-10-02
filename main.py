@@ -24,3 +24,18 @@ for line in content.strip().split("\n"):
 infile = fs.open("wd-wordbook/girl01.png")
 image = Image.open(infile)
 st.image(image, caption='test')
+
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+   st.header("A girl01")
+   st.image(Image.open(fs.open("wd-wordbook/girl01.png")))
+
+with col2:
+   st.header("A girl02")
+   st.image(Image.open(fs.open("wd-wordbook/girl01.png")))
+
+with col3:
+   st.header("A girl03")
+   st.image(Image.open(fs.open("wd-wordbook/girl01.png")))
