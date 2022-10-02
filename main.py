@@ -1,6 +1,7 @@
 import streamlit as st
 import s3fs
 import os
+from PIL import Image, ImageStat
 
 # Create connection object.
 # `anon=False` means not anonymous, i.e. it uses access keys to pull data.
@@ -19,3 +20,7 @@ content = read_file("wd-wordbook/myfile.csv")
 for line in content.strip().split("\n"):
     name, pet = line.split(",")
     st.write(f"{name} has a :{pet}:")
+
+infile = fs.open("wd-wordbook/girl01.png")
+image = Image.open(infile)
+st.image(image, caption='test')
